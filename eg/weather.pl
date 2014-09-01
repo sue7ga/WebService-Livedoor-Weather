@@ -6,7 +6,6 @@ use FindBin;
 use Furl;
 use utf8;
 use WebService::Livedoor::Weather;
-use utf8;
 use lib "$FindBin::Bin/../lib";
 
 my $weather  = WebService::Livedoor::Weather->new(furl => Furl->new);

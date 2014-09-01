@@ -2,7 +2,6 @@ package WebService::Livedoor::Weather;
 use 5.008005;
 use strict;
 use warnings;
-use Data::Dumper;
 use LWP::UserAgent;
 use Carp;
 use XML::Simple;
