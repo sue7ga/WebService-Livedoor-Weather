@@ -9,7 +9,7 @@ use Furl;
 
 use Class::Accessor::Lite::Lazy(
     new => 1,
-    ro_lazy => [qw/furl/]
+    rw_lazy => [qw/furl/]
 );
 
 sub _build_furl{
