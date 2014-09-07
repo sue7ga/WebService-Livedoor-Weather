@@ -13,8 +13,8 @@ use Class::Accessor::Lite::Lazy(
 );
 
 sub _build_furl{
-    my $self = shift;
-    $self->furl = Furl->new;
+ my $self = shift;
+ return Furl->new(agent => 'WebService::Livedoor::Weather');
 }
 
 use constant BASE_URI => 'http://weather.livedoor.com/forecast';

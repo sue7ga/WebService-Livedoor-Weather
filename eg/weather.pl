@@ -13,7 +13,7 @@ my $weather  = WebService::Livedoor::Weather->new();
 my $content = $weather->get('旭川');
 
 use Data::Dumper;
-print Encode::encode_utf8($content->{location}->{area});
+print  $content->{link};
 
 
 
