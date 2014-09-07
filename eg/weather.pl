@@ -1,18 +1,21 @@
 use strict;
 use warnings;
-use Data::Dumper;
 use Carp;
-use FindBin;
-use Furl;
 use utf8;
 use WebService::Livedoor::Weather;
-use lib "$FindBin::Bin/../lib";
+use File::Spec;
+use File::Basename 'dirname';
+use lib (
+   File::Spec->catdir(dirname(__FILE__),qw/.. lib/),
+);
 
-my $weather  = WebService::Livedoor::Weather->new(furl => Furl->new);
+my $weather  = WebService::Livedoor::Weather->new();
+my $content = $weather->get('旭川');
 
-my $content = $weather->get('東京');
+use Data::Dumper;
+print Encode::encode_utf8($content->{location}->{area});
 
-print Encode::encode_utf8($content->{location}->{prefecture});
+
 
 
 
